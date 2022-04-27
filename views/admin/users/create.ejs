@@ -1,0 +1,25 @@
+<%-include ("../../partials/header.ejs")%>
+<%-include ("../../partials/navbar.ejs")%>
+
+<div class="container">
+<hr>
+    <div class="card mt4">
+        <div class="card-header">
+                <h2>Register of Users</h2>
+        </div>
+        <div class="card-body">
+            <form action="/users/create" method="POST" >
+                <input type="email" class="form-control" name="email" placeholder="email@dominio.com"><br>
+                <input type="password" name="password" placeholder="********"><br>
+                 <br>   <button type="submit" class="btn btn-danger btn-block"> Register</button>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+<%-include ("../../partials/footer.ejs")%>

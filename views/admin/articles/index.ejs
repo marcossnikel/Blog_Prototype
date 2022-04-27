@@ -1,0 +1,55 @@
+<%-include ("../../partials/header.ejs")%>
+<%-include ("../../partials/navbar.ejs")%>
+
+<div class="container">
+    <hr>
+    <h2>Articles</h2>
+    <a class="btn btn-danger" href="/admin/articles/new">Create a new Article </a>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Slug</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% articles.forEach(article =>{%>
+                <tr> 
+                <td><%=article.id%></td>
+                <td><%=article.title%></td>
+                <td><%=article.slug%></td>
+                <td><%=article.category.title%></td>
+                <td>
+                    <form method="POST" action="/articles/delete" style="display: inline;" onsubmit="confirmation(event,this)">
+                        <input type="hidden" name="id" value="<%=article.id%>">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                    <input type="hidden" name="id" value=<%=article.id%>>
+                        <button class="btn btn-warning">Edit</button>
+                </td>
+            </tr>
+           <% }) %>
+
+
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function confirmation(event, form){
+        event.preventDefault();
+        let decision = confirm("Do you want to delete this article ?")
+
+        if(decision){
+            form.submit();
+        }else{
+            console.log("I didnt want to delete")
+        }
+    }
+</script>
+
+<%-include ("../../partials/footer.ejs")%>

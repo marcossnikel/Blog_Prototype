@@ -1,0 +1,23 @@
+<%-include ("../../partials/header.ejs")%>
+<div class="container">
+<hr>
+    <div class="card mt4">
+        <div class="card-header">
+                <h2>Login</h2>
+        </div>
+        <div class="card-body">
+            <form action="/authenticate" method="POST" >
+                <input type="email" class="form-control" name="email" placeholder="email@dominio.com"><br>
+                <input type="password" name="password" placeholder="********"><br>
+                 <br>   <button type="submit" class="btn btn-danger btn-block"> Login</button>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+<%-include ("../../partials/footer.ejs")%>

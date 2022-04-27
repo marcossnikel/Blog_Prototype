@@ -1,0 +1,3 @@
+Esse blog foi criado visando o desenvolvimento pelo Back-End da aplicação e nele foi trabalho os seguintes conceitos : criação de rotas, sistema de login e autenticação, registro de dados em banco de dados, segurança da senha do usuario, nele utilizei de Javascript com NodeJS, usando Express para o servidor , outras libs que utilizei nele foram : 
+
+bcryptjs(Segurança de senha); body-parser(formularios) ; ejs(view engine , o html do projeto com implementação de javascript); express (servidor ); express-sessions (criação de sessões de usuario na aplicação) ; mysql(banco de dados); sequelize(orm do projeto); slugify(criação de slugs);

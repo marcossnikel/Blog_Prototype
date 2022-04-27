@@ -1,0 +1,31 @@
+<%-include ("partials/header.ejs")%>
+<%-include ("partials/navbar-home.ejs")%>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Nikel´s Blog</h1>
+            <p class="lead">This is a blog divided ang Categories and Articles, you can write and read many things about technology</p>
+            <hr class="my-4">
+            <p>To create our read any article, follow the instructions buttons , thank you for use our blog to get information ,everything here are checked to see the veracity</p>
+            <a class="btn btn-warning btn-lg" href="/admin/categories" role="button">Login</a>
+        </div>
+        <hr>
+        <%articles.forEach(articles =>{%>
+        <div class="card-header">
+              <h2><%=articles.title%></h2>
+        </div>
+        <div class="card-body">
+            <a href="/<%= articles.slug %>" class="btn btn-danger">Read This Article</a>
+        </div>
+        <br> 
+       <% }) %>
+
+       <div class="row">
+           <div class="col col-12">
+            <a style="float: right;" href="/articles/page/2">Next >></a>
+           </div>
+       </div>
+       <hr>
+    </div>
+</body>
+<%-include ("partials/footer.ejs")%>
